@@ -335,25 +335,6 @@ echo ""
 echo -e "WEB SONYC SSH" | figlet | boxes -d stone -p a0v0 | lolcat
 echo -e "                              \033[1;31mModificado por @sonycssh\033[1;36m" | lolcat
 echo ""
-chave=$(curl -sSL "https://github.com/lucianolima2905/Pweb-Sonyc_Plus/raw/main/install/chave") &>/dev/null
-
-read -p "DIGITE A CHAVE DE INSTALAÇÃO: " key
-    
-         if [[ "$key" = "$chave" ]]
-         then
-               echo -e "[*] VALIDANDO A CHAVE DE INSTALAÇÃO"
-                sleep 2
-                echo $key > /bin/chave_inst
-                echo -e "[*] CHAVE ACEITA"
-                sleep 2
-            else
-            echo "[-] ESSA CHAVE NÃO É VÁLIDA!"
-            sleep 3
-            clear
-            cat /dev/null > ~/.bash_history && history -c
-            rm /bin/ubuinst* > /dev/null 2>&1
-            exit;
-          fi
 install_continue
 install_continue2
 [[ $(grep -c "prohibit-password" /etc/ssh/sshd_config) != '0' ]] && {
